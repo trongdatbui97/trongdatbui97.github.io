@@ -9,7 +9,7 @@ table{
     width:100%;
 }
 table,th,td{
-    border:2px solid gray;
+    border:2px solid black;
     border-collapse: collapse;
     font-size: 150%;
 }
@@ -24,8 +24,8 @@ th,td{
     text-align: center;
 }
 th{
-    background-color: #008040;
-    color: white;
+    background-color: #000980;
+    color: rgb(255, 255, 255);
 }
 tr:nth-child(even){
     background-color: #F0F0F0;
@@ -37,7 +37,7 @@ tr:hover{
 </head>
 
 <body>
-    <p>Dữ liệu nhiệt độ và độ ẩm</p>
+    <p id="p">Dữ liệu nhiệt độ và độ ẩm</p>
     <table border="1">
         <thead >
         <tr>
@@ -58,8 +58,8 @@ tr:hover{
             var date = new Date(data.feeds[i].created_at);
             txt += `<tr>
             <td>${i+1}</td>
-            <td>${date.toLocaleTimeString()} - ${date.toLocaleDateString()}</td>
-            <td><font color="red">${data.feeds[i].field1}&deg;C</font></td>
+            <td>${date.toLocaleDateString()} ${date.toLocaleTimeString()} </td>
+            <td><font color='red'>${data.feeds[i].field1}&deg;C</font></td>
             <td><font color="blue">${data.feeds[i].field2}%</font></td>
         </tr>`
         }      
